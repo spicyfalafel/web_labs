@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="icon" href="res/ukraine.png" type="image/png">
+    <title>Lab1</title>
+</head>
+<body>
+<header class="header">
+    <h1 class="lab_info">Вариант 2212</h1>
+    <h1 class="lab_info"><a href="https://github.com/spicyfalafel">Кривошеев Святослав P3211</a></h1>
+</header>
+<table class="everything_table">
+    <tr class="first-row-in-everything-table">
+        <td>
+            <table id="result-table" class="result-table">
+                <tr class="result-table-row">
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>RESULT</th>
+                    <th>TIME</th>
+                    <th>EXECUTION TIME</th>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <?xml-stylesheet type="text/css" href="index.css"?>
+            <svg id="graph" xmlns="http://www.w3.org/2000/svg" width="300" height="300"
+                 viewBox="0 0 300 300">
+                <rect height="300" width="300" fill="skyblue" stroke="steelblue" stroke-width="5"/>
+                <g style="fill:red;  stroke-width:1.5; fill-opacity: 0.75; stroke : rgb(0, 0, 0);
+            font-size: 11px">
+
+                    <circle id="my-circle" cx="150" cy="150" r="70" clip-path="url(#left-fourth)" stroke="rgb(255, 236, 122)"/>
+
+                    <rect x="80" y="150" width="70" height="70" clip-path="url(#top-diagonal)" stroke="rgb(255, 236, 122)"/>
+
+                    <line x1="80" y1="150" x2="150" y2="220" stroke="rgb(255, 236, 122)"/>
+                    <rect x="150" y="150" width="70" height="70" stroke="rgb(255, 236, 122)"/>
+                    <!-- X -->
+                    <line x1="150" y1="5" x2="150" y2="295"/>
+                    <line x1="150" y1="5" x2="155" y2="15" />
+                    <line x1="150" y1="5" x2="145" y2="15" />
+                    <line x1="220" y1="146"
+                          x2="220" y2="154"/>
+                    <line x1="80" y1="146"
+                          x2="80" y2="154"/>
+                    <line x1="115" y1="146"
+                          x2="115" y2="154"/>
+                    <line x1="185" y1="146"
+                          x2="185" y2="154"/>
+
+
+                    <text x="70" y="166" fill="black">-R</text>
+                    <text x="215" y="166" fill="black">R</text>
+
+                    <text x="100" y="166" fill="black">-R/2</text>
+                    <text x="175" y="166" fill="black">R/2</text>
+
+                    <!-- Y -->
+                    <line x1="295" y1="150" x2="5" y2="150"/>
+                    <line x1="295" y1="150" x2="285" y2="155"/>
+                    <line x1="295" y1="150" x2="285" y2="145"/>
+                    <line x1="146" y1="80"
+                          x2="154" y2="80"/>
+                    <line x1="146" y1="220"
+                          x2="154" y2="220"/>
+                    <line x1="146" y1="115"
+                          x2="154" y2="115"/>
+                    <line x1="146" y1="185"
+                          x2="154" y2="185"/>
+
+                    <text x="156" y="85" fill="black">R</text>
+                    <text x="156" y="224" fill="black">-R</text>
+
+                    <text x="156" y="120" fill="black">R/2</text>
+                    <text x="156" y="189" fill="black">-R/2</text>
+
+                    <circle id="point" r="5" cx="200" cy="200" fill="blue" stroke="blue" visibility="hidden"/>
+
+                    <defs>
+                        <clipPath id="left-fourth">
+                            <rect x="0" y="0" width="150" height="150"/>
+                        </clipPath>
+                        <clipPath id="top-diagonal">
+                            <polygon points="80,150,150,220,150,150"/>
+                        </clipPath>
+                    </defs>
+                </g>
+            </svg>
+        </td>
+        <td>
+            <form id="coordinates-form">
+                <div class="X-radios">
+                    <h4>X:</h4>
+                    <label class="x-element-label">-3
+                        <input class="x_radio" type="radio" name="x" value="-3">
+                    </label>
+                    <label class="x-element-label">-2
+                        <input class="x_radio" type="radio" name="x" value="-2">
+                    </label>
+                    <label class="x-element-label">-1
+                        <input class="x_radio" type="radio" name="x" value="-1">
+                    </label>
+                    <label class="x-element-label">0
+                        <input class="x_radio" type="radio" name="x" value="0">
+                    </label>
+                    <label class="x-element-label">1
+                        <input class="x_radio" type="radio" name="x" value="1">
+                    </label>
+                    <label class="x-element-label">2
+                        <input class="x_radio" type="radio" name="x" value="2">
+                    </label>
+                    <label class="x-element-label">3
+                        <input class="x_radio" type="radio" name="x" value="3">
+                    </label>
+                    <label class="x-element-label">4
+                        <input class="x_radio" type="radio" name="x" value="4">
+                    </label>
+                    <label class="x-element-label">5
+                        <input class="x_radio" type="radio" name="x" value="5">
+                    </label>
+                </div>
+                <label class="Y-element-label"> Y:
+                    <input id="y-text" class="y-text-input" type="text" name="y" placeholder="y value" maxlength="14" required/>
+                </label>
+                <span id="value-validate-text"></span>
+                <div class="R-checkboxes" id="R">
+                    <h4>R:</h4>
+                    <label class="r-element-label">1
+                        <input class="r-checkbox" type="checkbox" name="r" value="1" checked>
+                    </label>
+                    <label class="r-element-label">1.5
+                        <input class="r-checkbox" type="checkbox" name="r" value="1.5">
+                    </label>
+                    <label class="r-element-label">2
+                        <input class="r-checkbox" type="checkbox" name="r" value="2">
+                    </label>
+                    <label class="r-element-label">2.5
+                        <input class="r-checkbox" type="checkbox" name="r" value="2.5">
+                    </label>
+                    <label class="r-element-label">3
+                        <input class="r-checkbox" type="checkbox" name="r" value="3">
+                    </label>
+                </div>
+                <button id="submit-button" type="submit">Отправить</button>
+                <button id="clear-button" type="reset">Очистить</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+
+<script src="res/jquery.js"></script>
+<script src="my_script.js"></script>
+</body>
+</html>
